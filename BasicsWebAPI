@@ -1,0 +1,13 @@
+What is Same Origin Policy?
+Browsers allow a webpage to make ajaxrequests only within the same domain. 
+Browser security prevents webpage from making AJAX requests to another domain is called same origin policy
+
+ex: below are the different domains
+http://localhost:1234/api/students
+https://localhost:1234/api/students
+http://localhost:4567/api/students
+http://localhost.com/api/students
+http://localhost.in/api/students
+
+What is Cors? How do you share resources across cross origin?
+
