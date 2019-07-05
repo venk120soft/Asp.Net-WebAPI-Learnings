@@ -11,3 +11,27 @@ http://localhost.in/api/students
 
 What is Cors? How do you share resources across cross origin?
 
+Cors stands for cross origin resourse sharing, to do this we have 2 ways 
+1)  using JSONP:  
+  In WebApi.config.cs file In Register method of the file use the JSONP formatter
+  var jsonpFormatter= new JsonpMediaTypeFormatter(config.Formatters.JsonFormatter);
+  // Add this formatter as first
+  config.Formatters.Insert(0, jsonpFormatter);
+  then, When you calling the api mention the Accept type as application/jsonp
+2)  Cors : Install Microsoft.AspNet.WebApi.Cors package using nuget package manager console
+Install-package Microsoft.AspNet.WebApi.Cors or search for the nuget package of the same and install.
+
+Then In WebApiConfig.cs
+// for whole application and all methods
+EnableCorsAttribute cors = new EnableCorsAttribute("*","*","GET,POST");
+config.EnableCors(cors)
+
+// Controller level
+[EnableCorsAttribute("*","*","*")]
+
+If we want to disable cors for perticular method then 
+[DisableCors]
+
+
+
+EnableCorsAttribute(origin,)
